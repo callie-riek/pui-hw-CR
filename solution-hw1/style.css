@@ -102,6 +102,7 @@ img {
     width:15%;
     margin-left: auto;
     margin-right: auto;
+    text-align: left;
 
 }
 
@@ -109,6 +110,7 @@ img {
 .drop-down {
     width:15%;
     display: block;
+    text-align: left;
     margin-left: auto;
     margin-right: auto;
 }
@@ -118,25 +120,24 @@ select {
 }
 
 .add-to-cart {
-    margin-left: 500px;
-    margin-right: auto;
     display: inline-flex;
-    text-align: center;
-    height:40px;
-    vertical-align: center;
-
-
 }
 
 #id {
     text-align: center;
+}
+
+.cart-price{
+    margin-right: 10px;
 }
  button {
     background-color: yellow;
     padding-left: 15px;
     padding-right: 15px;
     width: 100px;
-    margin-left: 20px; 
+    margin: auto;
+    display: block;
+   
 }
 
 .smaller-image {
