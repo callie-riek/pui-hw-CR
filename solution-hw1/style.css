@@ -1,0 +1,168 @@
+.logo {
+    width: 15%; 
+    border: none;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+
+.nav {
+    text-align: center;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 15px;
+    margin-bottom: 5%;
+}
+
+.nav-item {
+    width: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+hr {
+    border-width: 2px;
+    border-color: black;
+}
+
+/* this is to style the links */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+img {
+    border: 2px solid black
+}
+
+/* this will override styling on links (above) to add underline to item name */
+.item-title {
+    text-decoration: underline;
+    text-decoration-thickness: 0.8px;
+}
+
+.detail-item-title {
+    text-align: center;
+}
+
+
+.menu { /*this is for the menu as a whole */
+    text-align: left;
+    line-height: 30%;
+}
+
+.menu-intro {
+    text-align: center;
+    line-height: 5%;
+    
+}
+
+/* this is the block in which I have placed the image and text for each item */
+.items { 
+    width: 20%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-right: 1%;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+/*this is for the image */
+.menu-item {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+}
+
+.items:hover {
+    background-color: yellow;
+}
+
+.product-detail {
+    width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.detail-description {
+    width:15%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+.drop-down {
+    width:15%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+select {
+    width:150px
+}
+
+.add-to-cart {
+    margin-left: 500px;
+    margin-right: auto;
+    display: inline-flex;
+    text-align: center;
+    height:40px;
+    vertical-align: center;
+
+
+}
+
+#id {
+    text-align: center;
+}
+ button {
+    background-color: yellow;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100px;
+    margin-left: 20px; 
+}
+
+.smaller-image {
+    width: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cart-item {
+    text-align: center;
+    line-height: 5px;
+}
+
+.price {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.caption {
+    text-align: center;
+    line-height: 5px;
+    font-size: 10px;
+    margin-top: 5px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+
