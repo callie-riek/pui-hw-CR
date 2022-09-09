@@ -65,7 +65,7 @@ img {
     line-height: 5%;
 }
 
-/* contianer for menu items */
+/* container for menu items */
 .items { 
     width: 20%;
     margin-top: 1%;
@@ -93,7 +93,7 @@ img {
     background-color: yellow;
 }
 
-/* styling larger image size for product page */
+/* larger image size for product page */
 .product-detail {
     width: 40%;
     display: block;
@@ -130,7 +130,7 @@ select {
     display: inline-flex;
 }
 
-/* add spacing to price */
+/* add spacing to price in product detail page */
 .cart-price{
     margin-right: 10px;
 }
@@ -155,15 +155,16 @@ select {
 }
 
 /* styling text on cart page */
-.cart-item {
+.centered-item {
     text-align: center;
     line-height: 5px;
+    margin-top: 5px; 
 }
 
-/* text style for price on cart page */
+/* adding top margin to prices on the cart page */
 .price {
     text-align: center;
-    margin-top: 5px;
+    margin-top: 25px;
 }
 
 /* "remove" styling */
@@ -174,6 +175,10 @@ select {
     margin-top: 5px;
     font-weight: bold;
     text-decoration: underline;
+}
+
+#short-break{
+    width: 60%;
 }
 
 
