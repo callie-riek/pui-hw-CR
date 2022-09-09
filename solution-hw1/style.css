@@ -8,7 +8,7 @@ body {
     font-size: 16px;
 }
 
-
+/* nav bar */
 .nav {
     text-align: center;
     font-weight: bold;
@@ -23,16 +23,18 @@ body {
     padding: 5px;
 }
 
+/* yellow highlight on nav bar for current page */
 .highlight {
     background-color: yellow;
 }
 
+/* thickness of line break */
 hr {
     border-width: 2px;
     border-color: black;
 }
 
-/* this is to style the links */
+/*links */
 a {
     text-decoration: none;
     color: black;
@@ -52,8 +54,8 @@ img {
     text-align: center;
 }
 
-
-.menu { /*this is for the menu as a whole */
+/*for the menu as a whole */
+.menu { 
     text-align: left;
     line-height: 30%;
 }
@@ -61,10 +63,9 @@ img {
 .menu-intro {
     text-align: center;
     line-height: 5%;
-    
 }
 
-/* this is the block in which I have placed the image and text for each item */
+/* contianer for menu items */
 .items { 
     width: 20%;
     margin-top: 1%;
@@ -78,7 +79,7 @@ img {
     padding-bottom: 1%;
 }
 
-/*this is for the image */
+/* menu images */
 .menu-item {
     width: 100%;
     display: block;
@@ -91,6 +92,7 @@ img {
     background-color: yellow;
 }
 
+/* styling larger image size for product page */
 .product-detail {
     width: 40%;
     display: block;
@@ -99,6 +101,7 @@ img {
 
 }
 
+/* description for item in product detail page */
 .detail-description {
     width:15%;
     margin-left: auto;
@@ -116,22 +119,22 @@ img {
     margin-right: auto;
 }
 
+/* drop down menu */
 select {
     width:150px
 }
 
+/* put price and button on the same line */
 .add-to-cart {
     display: inline-flex;
 }
 
-#id {
-    text-align: center;
-}
-
+/* add spacing to price */
 .cart-price{
     margin-right: 10px;
 }
 
+/* button styling */
  button {
     background-color: yellow;
     padding-left: 15px;
@@ -142,6 +145,7 @@ select {
    
 }
 
+/* smaller images for cart page */
 .smaller-image {
     width: 10%;
     display: block;
@@ -149,16 +153,19 @@ select {
     margin-right: auto;
 }
 
+/* styling text on cart page */
 .cart-item {
     text-align: center;
     line-height: 5px;
 }
 
+/* text style for price on cart page */
 .price {
     text-align: center;
     margin-top: 5px;
 }
 
+/* "remove" styling */
 .caption {
     text-align: center;
     line-height: 5px;
