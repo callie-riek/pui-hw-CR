@@ -23,21 +23,21 @@ body {
     padding: 5px;
 }
 
-/* yellow highlight on nav bar for current page */
-.highlight {
-    background-color: yellow;
-}
-
-/* thickness of line break */
+/* thickness of line break below nav bar */
 hr {
     border-width: 2px;
     border-color: black;
 }
 
-/*links */
+/*removing decoration from links */
 a {
     text-decoration: none;
     color: black;
+}
+
+/* yellow highlight on nav bar for current page */
+.highlight {
+    background-color: yellow;
 }
 
 img {
@@ -88,6 +88,7 @@ img {
     margin-bottom: 1%;
 }
 
+/* yellow background when user hovers on menu items */
 .items:hover {
     background-color: yellow;
 }
@@ -110,7 +111,7 @@ img {
 
 }
 
-
+/* drop down menus */
 .drop-down {
     width:15%;
     display: block;
