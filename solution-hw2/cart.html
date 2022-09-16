@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <meta charset="UTF-8">
-  <title>Cart</title>
+  <title>Product Detail</title>
   <link rel="stylesheet" href="style.css"/>
 
   <div class="whole-nav">
@@ -13,9 +13,9 @@
       <div class="nav-menu">
         <div class="nav">
 
-          <a href="index.html"><h1 class="highlight">PRODUCTS</h1></a>
+          <a href="index.html"><h1>PRODUCTS</h1></a>
             <span class="margin"></span>
-          <a href="cart.html"><h1>CART</h1></a>
+          <a href="cart.html"><h1 class="highlight">CART</h1></a>
         </div>
 
         <hr>
@@ -26,23 +26,22 @@
 
   <!-- --------------------------------------->
   <div class="whole-cart">
-    <div class="cart-row">
+    <div class="cart-column">
+    <div class="cart-inner-row">
   <div class="cart-image-caption">
       <img class="smaller-image" src="assets/products/original-cinnamon-roll.jpg" alt="Original cinnamon roll">
         <p class="caption">Remove</p>
       </div>
-    
-
-        <div class="cart-column">
 
         <div class="cart-description">
           <p>Original cinnamon roll</p>
           <p>Glazing: Keep original</p>
           <p>Pack Size: 1</p>
         </div>
-          <p>$ 2.49</p>
+        <p>$ 2.49</p>
         </div>
-
+    
+        <div class="cart-inner-row">
       <div class="cart-image-caption">
       <img src="assets/products/double-chocolate-cinnamon-roll.jpg" alt="Double chocolate cinnamon roll" class="smaller-image"/>
         <p class="caption">Remove</p>
@@ -54,11 +53,18 @@
         </div>
           <p>$ 27.45</p>
       </div>
+    </div>
+    <hr>
+<div class="price">
+    <p>Total </p> <p>$29.94</p>
+  </div>
+  <div id="cart-button">
+      <button>Checkout</button>
+    </div>
+
 
     </div>
 
-      <p class="price">Total: $29.94</p>
-      <button class="button">Checkout</button>
-
+      
   </body>
 </html>
