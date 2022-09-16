@@ -14,8 +14,6 @@ body {
     flex-direction: row;
     justify-content: right;
 
-
-    /* text-align: center; */
     font-weight: bold;
     font-size: 10px;
     line-height: 15px;
@@ -32,12 +30,11 @@ body {
     margin-right: 70%;
 }
 
-
-
 /* thickness of line break below nav bar */
 hr {
     border-width: 2px;
     border-color: black;
+    /* stretch the line to the width of the container */
     width: 100%;
 }
 
@@ -80,18 +77,16 @@ img {
     display: flex;
     flex-direction: column;
 
-
     text-align: left;
     line-height: 30%;
 }
 
-/* flex box for menu items */
+/* flex box for menu items on the main page*/
 .menu-row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-
 }
 
 .menu-intro {
@@ -102,15 +97,13 @@ img {
     font-size: 25px;
 }
 
-/* container for menu items */
+/* container for menu items on the main page*/
 .items { 
     width: 20%;
-
     margin-top: 1%;
     margin-bottom: 1%;
     margin-left: 2%;
     margin-right: 2%; */
-
     display: block;
     padding-right: 1%;
     padding-left: 1%;
@@ -132,6 +125,7 @@ img {
     background-color: yellow;
 }
 
+/* big flex box for detail page */
 .whole-detail {
     display: flex;
     flex-direction: row;
@@ -140,6 +134,7 @@ img {
     
 }
 
+/* flex box fo rpurchase column */
 .purchase {
     font-size: 20px;
     width:30%;
@@ -198,7 +193,6 @@ select {
     justify-content: right;
     font-size: 20px;
     border: 3px solid black;
-   
 }
 
 /* smaller images for cart page */
@@ -207,6 +201,7 @@ select {
     margin-right: 20px;
 }
 
+/* styling for caption */
 .caption {
     line-height: 5px;
     font-size: 12px;
@@ -215,12 +210,12 @@ select {
     text-decoration: underline;
 }
 
+/* flex box to keep image an caption together */
 .cart-image-caption {
     display: flex;
     flex-direction: column;
     margin-right: 20px;
     margin-top: 20px;
-
 }
 
 /* styling text on cart page */
@@ -230,27 +225,30 @@ select {
     margin-right: 20px; 
     width: 415px
 }
+
+/* big flex box for cart */
 .cart-column{
     display: flex;
     flex-direction: column;
 }
 
+/* image, description, price */
 .cart-inner-row {
     display: flex;
     flex-direction: row;
     align-items: center;
-
 }
 
+/* big flex box to put the whole thing in a column */
 .whole-cart {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     width: 80%;
     margin-left: 20%;
-
 }
 
+/* total and price */
 .price {
     display: flex;
     flex-direction: row;
@@ -262,9 +260,6 @@ select {
     width:150px;
     align-items: right;
     margin-left: 70%;
-    
-
-    
 }
 
 
