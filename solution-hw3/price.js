@@ -10,7 +10,7 @@ function changePrice() {
     var newPrice = ((basePrice + glazingPrice) * packAdapt).toFixed(2)
     console.log("new price", newPrice)
     document.getElementById("price").innerHTML = "$" + newPrice
-    console.log("price in changed price function",newPrice)
+    console.log("price in change price function",newPrice)
 }
 
 
@@ -74,7 +74,7 @@ function glazingChange(element) {
 changePrice()
 }
 
-//TO DO write a function that fetches the pack size and corresponds that to a multipler
+//Grabs the pack size and corresponds that to a multipler
 function packChange(element) {
     for (let i=0; i < PackOptionsArray.length; i++){
         if (element.value === PackOptionsArray[i].size) {
