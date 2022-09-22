@@ -19,7 +19,7 @@ function changePrice() {
 function Glaze(type, price) {
     this.type = type;
     this.price = price;
-}
+} //create a class with constructor inside the class
 
 const original = new Glaze('Keep original', 0);
 const SugarMilk = new Glaze('Sugar Milk', 0);
@@ -84,8 +84,5 @@ function packChange(element) {
 }
 changePrice()
 }
-
-//TO ASK: is it ok to have change price function within glazeChange/ packChange?
-
 
 

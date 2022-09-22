@@ -175,7 +175,7 @@ select {
 .add-to-cart {
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: space-between;
 }
 
 /* add spacing to price in product detail page */
