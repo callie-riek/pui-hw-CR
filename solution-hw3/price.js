@@ -2,7 +2,17 @@ console.log("howdy")
 
 var basePrice = 2.49;
 var glazingPrice = 0;
-var packSize = 0;
+var packAdapt = 1; //setting packAdapt to 1 because if I set it to 0 it will calculate
+//new price as 0 when pack option is not selected
+
+//calculate new price
+function changePrice() {
+    var newPrice = ((basePrice + glazingPrice) * packAdapt).toFixed(2)
+    console.log("new price", newPrice)
+    document.getElementById("price").innerHTML = "$" + newPrice
+    console.log("price in changed price function",newPrice)
+}
+
 
 ///////////////GLAZE OPTIONS////////////////////
 
@@ -44,19 +54,38 @@ console.log("pack array",PackOptionsArray);
 
 let packSizeOptions = document.getElementById("packSizeOptions");
 
+//this function loops through the array to create new objects and add them
+// to the inner HTML
 for (let i=0; i < PackOptionsArray.length; i++){
     let packOption = document.createElement("option");
     packOption.innerHTML = PackOptionsArray[i].size;
     packSizeOptions.appendChild(packOption);
 }
 
+//if the value of the element the dropdown selected matches something in the glaze
+//glaze options Array,the variable glazingPrice should be reset to the price paired with that type in the array 
 function glazingChange(element) {
     for (let i=0; i < GlazeOptionsArray.length; i++){
         if (element.value === GlazeOptionsArray[i].type) {
             glazingPrice = GlazeOptionsArray[i].price; 
         } 
-        console.log("glaze price", glazingPrice)
-        
-    
+        console.log("glaze price", glazingPrice)        
 }
+changePrice()
 }
+
+//TO DO write a function that fetches the pack size and corresponds that to a multipler
+function packChange(element) {
+    for (let i=0; i < PackOptionsArray.length; i++){
+        if (element.value === PackOptionsArray[i].size) {
+            packAdapt = PackOptionsArray[i].adapt; 
+        } 
+        console.log("pack adapt", packAdapt)  
+}
+changePrice()
+}
+
+//TO ASK: is it ok to have change price function within glazeChange/ packChange?
+
+
+

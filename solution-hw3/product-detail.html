@@ -45,9 +45,7 @@
         <br>
 
       <label for= "Pack-Size">Pack Size</label><br>
-        <select id="packSizeOptions"
-         
-          name= "Pack Size">
+        <select id="packSizeOptions" onchange="packChange(this)" name= "Pack Size">
          
         </select>
     </div>
@@ -55,7 +53,7 @@
    <br>
 
     <div class="add-to-cart">
-      <p class="cart-price">$2.49</p>
+      <p class="cart-price" id="price">$2.49</p>
       <button>Add to cart</button>
     </div>
 </div>
