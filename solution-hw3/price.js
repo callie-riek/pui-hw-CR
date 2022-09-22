@@ -51,7 +51,7 @@ function glazingChange(element) {
             glazingPrice = GlazeOptionsArray[i].price; 
         }        
 }
-changePrice()
+changePrice();
 }
 
 //Grabs the pack size and corresponds that to a multipler
@@ -61,7 +61,7 @@ function packChange(element) {
             packAdapt = PackOptionsArray[i].adapt; 
         } 
 }
-changePrice()
+changePrice();
 }
 
 
