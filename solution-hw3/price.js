@@ -1,0 +1,62 @@
+console.log("howdy")
+
+var basePrice = 2.49;
+var glazingPrice = 0;
+var packSize = 0;
+
+///////////////GLAZE OPTIONS////////////////////
+
+function Glaze(type, price) {
+    this.type = type;
+    this.price = price;
+}
+
+const original = new Glaze('Keep original', 0);
+const SugarMilk = new Glaze('Sugar Milk', 0);
+const VanillaMilk = new Glaze('Vanilla Milk', 0.5);
+const DoubleChocolate = new Glaze('Double Chocolate', 1.5);
+
+const GlazeOptionsArray = [ original, SugarMilk, VanillaMilk, DoubleChocolate];
+console.log("glaze array",GlazeOptionsArray);
+
+let glaze = document.getElementById("glazingOptions");
+
+for (let i=0; i < GlazeOptionsArray.length; i++){
+    let glazeOption = document.createElement("option");
+    glazeOption.innerHTML = GlazeOptionsArray[i].type;
+    glaze.appendChild(glazeOption);
+}
+
+//////////////////PACK SIZE ///////////////////////
+
+function PackSize(size, adapt) {
+    this.size = size;
+    this.adapt = adapt;
+}
+
+const One = new PackSize("1", 1);
+const Three = new PackSize("3", 3);
+const Six = new PackSize("6", 5);
+const Twelve = new PackSize("12", 10);
+
+const PackOptionsArray = [ One, Three, Six, Twelve];
+console.log("pack array",PackOptionsArray);
+
+let packSizeOptions = document.getElementById("packSizeOptions");
+
+for (let i=0; i < PackOptionsArray.length; i++){
+    let packOption = document.createElement("option");
+    packOption.innerHTML = PackOptionsArray[i].size;
+    packSizeOptions.appendChild(packOption);
+}
+
+function glazingChange(element) {
+    for (let i=0; i < GlazeOptionsArray.length; i++){
+        if (element.value === GlazeOptionsArray[i].type) {
+            glazingPrice = GlazeOptionsArray[i].price; 
+        } 
+        console.log("glaze price", glazingPrice)
+        
+    
+}
+}
