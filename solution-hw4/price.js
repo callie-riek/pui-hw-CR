@@ -85,8 +85,8 @@ const rollName = rollType + " " + "Cinnamon Roll"; //correct name
 basePrice = rollBasePrice; 
 
 document.querySelector(".menu-intro").innerText = rollName; //reassign header in html to roll name
-document.querySelector("#price").innerText = "$" + rollBasePrice //update price
-document.querySelector(".product-detail").src = rollImagePath
+document.querySelector("#price").innerText = "$" + rollBasePrice; //update price
+document.querySelector(".product-detail").src = rollImagePath;
 
 
 class Roll {
@@ -99,7 +99,7 @@ class Roll {
 }
 
 function addToCart() {
-    let newBun = new Roll(rollType, glaze.value, packSizeOptions.value, basePrice)
+    let newBun = new Roll(rollType, glaze.value, packSizeOptions.value, basePrice);
     cart.push(newBun);
     console.log("cart", cart);
 }
