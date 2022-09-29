@@ -70,26 +70,19 @@ let cart = [];
 
 //grab URL parameter and store roll type as a variable
 const queryString = window.location.search;
-// console.log("query string", queryString)
 const params = new URLSearchParams(queryString);
-// console.log("params", params)
 const rollType = params.get('roll'); //the variable roll type will be the value "roll" from the dictionary
-// console.log("roll type", rollType)
+
 
 // assign variables
 const rollBasePrice = rolls[rollType].basePrice;
-console.log("base price", rollBasePrice);
-
 //grab the path to assets folder of reach image
 const rollImagePath = "assets/products/" + rolls[rollType].imageFile; 
-console.log("image", rollImagePath);
-
+//add "cinnamon roll" to roll type
 const rollName = rollType + " " + "Cinnamon Roll"; //correct name
-console.log("roll name", rollName);
 
-
-basePrice = rollBasePrice; //reset base price variable to whatever the roll price is
-console.log("new roll base price", basePrice)
+//reset base price variable to whatever the roll price is
+basePrice = rollBasePrice; 
 
 document.querySelector(".menu-intro").innerText = rollName; //reassign header in html to roll name
 document.querySelector("#price").innerText = "$" + rollBasePrice //update price
@@ -106,7 +99,6 @@ class Roll {
 }
 
 function addToCart() {
-
     let newBun = new Roll(rollType, glaze.value, packSizeOptions.value, basePrice)
     cart.push(newBun);
     console.log("cart", cart);
