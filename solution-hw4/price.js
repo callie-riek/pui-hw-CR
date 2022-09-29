@@ -31,7 +31,7 @@ for (let i=0; i < GlazeOptionsArray.length; i++){
 const PackOptionsArray = [
     {size: "1", adapt: 1},
     {size:"3", adapt: 3},
-    {size: "5", adapt: 5},
+    {size: "6", adapt: 5},
     {size: "12", adapt: 10}
 ];
 
