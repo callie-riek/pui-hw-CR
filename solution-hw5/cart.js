@@ -7,28 +7,25 @@ class Roll {
         this.basePrice = rollPrice;
         this.calculatedPrice = calculatedPrice;
     }
-
-   
 }
 
 //cartTwo =  cart on cart page
 const cartTwo = new Set();
 
+//create new roll objects
 let newBun1 = new Roll ("Original", "Sugar Milk", 1, 2.49);
 let newBun2 = new Roll ("Walnut", "Vanilla Milk", 12, 3.49);
 let newBun3 = new Roll ("Raisin", "Sugar Milk", 3, 2.99);
 let newBun4 = new Roll ("Apple", "Keep Original", 3, 3.49);
 
+//add roll objects to cart set
 cartTwo.add(newBun1)
 cartTwo.add(newBun2)
 cartTwo.add(newBun3)
 cartTwo.add(newBun4)
 
-console.log("cart 2, try 2", cartTwo)
-
-//key:value
-
 //arrays with values needed in price calculation
+//price adapt
 let priceAdaption = {
     1:1,
     3:3,
@@ -36,6 +33,7 @@ let priceAdaption = {
     12:10
 }
 
+//glaze
 let glazingPrice = {
     "Keep Original":0,
     "Sugar Milk":0,
@@ -43,10 +41,12 @@ let glazingPrice = {
     "Double Chcolate":1.5
 }
 
+//calculate price for individual items
 function calculatePrice(basePrice, glazing, packSize) {
     return((basePrice + glazing) * packSize);
 }
 
+//calculate cart total
 function totalPrice() {
     let cartTotal = 0;
     for (let cartObject of cartTwo) {
@@ -75,11 +75,25 @@ function createCart(data) {
 
         clone.querySelector(".roll-price").innerText = "$" + finalPrice.toFixed(2);
 
+        const btnDelete = clone.querySelector('.caption');
+        btnDelete.addEventListener("click", () => {
+            clone.remove(); //remove HTML element
+            cartTwo.delete(cartObject); //remove cart object from cart set
+            totalPrice();
 
+            
+        })
+        totalPrice();
+
+        
 
         document.querySelector(".whole-cart").appendChild(clone);
-        totalPrice();
+
+        
+        
     }
+
+     
 
 }
 
