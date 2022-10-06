@@ -67,7 +67,7 @@ function createCart(data) {
 
         //populate HTML with text/ images
         clone.querySelector(".smaller-image").src = "assets/products/" + cartObject.type + "-cinnamon-roll.jpg"
-        clone.querySelector(".rollName").innerText = cartObject + "Cinnamon Roll";
+        clone.querySelector(".rollName").innerText = cartObject.type + " " + "Cinnamon Roll";
         clone.querySelector(".glazeType").innerText = "Glazing:" + cartObject.glazing;
         clone.querySelector(".packSize").innerText = "Pack Size:" + cartObject.packize;
 
