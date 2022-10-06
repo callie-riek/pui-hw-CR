@@ -13,10 +13,10 @@ class Roll {
 const cartTwo = new Set();
 
 //create new roll objects
-let newBun1 = new Roll ("Original", "Sugar Milk", 1, 2.49);
-let newBun2 = new Roll ("Walnut", "Vanilla Milk", 12, 3.49);
-let newBun3 = new Roll ("Raisin", "Sugar Milk", 3, 2.99);
-let newBun4 = new Roll ("Apple", "Keep Original", 3, 3.49);
+let newBun1 = new Roll ("original", "Sugar Milk", 1, 2.49);
+let newBun2 = new Roll ("walnut", "Vanilla Milk", 12, 3.49);
+let newBun3 = new Roll ("raisin", "Sugar Milk", 3, 2.99);
+let newBun4 = new Roll ("apple", "Keep Original", 3, 3.49);
 
 //add roll objects to cart set
 cartTwo.add(newBun1)
