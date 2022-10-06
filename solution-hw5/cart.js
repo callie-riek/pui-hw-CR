@@ -53,51 +53,42 @@ function totalPrice() {
         finalPrice = calculatePrice(cartObject.basePrice, glazingPrice[cartObject.glazing], priceAdaption[cartObject.packSize])
         cartTotal = finalPrice + cartTotal;
     }
-console.log("total price", cartTotal)
+//update HTML with cart total
 document.querySelector(".finalCartPrice").innerText = "$" + cartTotal.toFixed(2);
 }
 
 
-
+//clone objects into HTML template
 function createCart(data) {
     for (let cartObject of cartTwo) {
         let cartElement = document.getElementById("ItemOne")
         let docFragment = cartElement.content.cloneNode(true);
-
         let clone = docFragment.querySelector('.cart-inner-row')
-        
+
+        //populate HTML with text/ images
         clone.querySelector(".smaller-image").src = "assets/products/" + cartObject.type + "-cinnamon-roll.jpg"
         clone.querySelector(".rollName").innerText = cartObject + "Cinnamon Roll";
         clone.querySelector(".glazeType").innerText = "Glazing:" + cartObject.glazing;
         clone.querySelector(".packSize").innerText = "Pack Size:" + cartObject.packize;
 
+        //calculate final price of each item
         finalPrice = calculatePrice(cartObject.basePrice, glazingPrice[cartObject.glazing], priceAdaption[cartObject.packSize]); //find value in each dictionary
 
+        //add remove button
         clone.querySelector(".roll-price").innerText = "$" + finalPrice.toFixed(2);
-
         const btnDelete = clone.querySelector('.caption');
-        btnDelete.addEventListener("click", () => {
+        btnDelete.addEventListener("click", () => { //add inline style
             clone.remove(); //remove HTML element
             cartTwo.delete(cartObject); //remove cart object from cart set
-            totalPrice();
-
-            
+            totalPrice(); //call total price function here so it will run each time something is deleted   
         })
-        totalPrice();
 
-        
-
-        document.querySelector(".whole-cart").appendChild(clone);
-
-        
-        
+        totalPrice(); //call total price for each object
+        document.querySelector(".whole-cart").appendChild(clone); //append everything to whole cart  
     }
-
-     
-
 }
 
-createCart(cartTwo);
+createCart(cartTwo); //call create function
 
 
 
