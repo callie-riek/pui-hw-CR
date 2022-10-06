@@ -8,18 +8,12 @@ class Roll {
         this.calculatedPrice = calculatedPrice;
     }
 
-    // function calculatePrice(basePrice,packSize) {
-    //     console.log)"base price and pack size"
-    //     let calculatedPrice = basePrice + packSize
-    //     console.log("calculated price", calculatedPrice)
-    //     return calculatedPrice 
-    // }
+   
 }
 
 //cartTwo =  cart on cart page
 const cartTwo = new Set();
 
-//I need to calculate the total p
 let newBun1 = new Roll ("Original", "Sugar Milk", 1, 2.49);
 let newBun2 = new Roll ("Walnut", "Vanilla Milk", 12, 3.49);
 let newBun3 = new Roll ("Raisin", "Sugar Milk", 3, 2.99);
@@ -35,7 +29,7 @@ console.log("cart 2, try 2", cartTwo)
 //key:value
 
 //arrays with values needed in price calculation
-let PriceAdaption = {
+let priceAdaption = {
     1:1,
     3:3,
     6:5,
@@ -49,9 +43,21 @@ let glazingPrice = {
     "Double Chcolate":1.5
 }
 
-function calculatePrice(basePrice, glazingPrice, packPrice) {
-    return((basePrice + glazingPrice) * packPrice)
+function calculatePrice(basePrice, glazing, packSize) {
+    return((basePrice + glazing) * packSize);
 }
+
+function totalPrice() {
+    let cartTotal = 0;
+    for (let cartObject of cartTwo) {
+        finalPrice = calculatePrice(cartObject.basePrice, glazingPrice[cartObject.glazing], priceAdaption[cartObject.packSize])
+        cartTotal = finalPrice + cartTotal;
+    }
+console.log("total price", cartTotal)
+document.querySelector(".finalCartPrice").innerText = "$" + cartTotal.toFixed(2);
+}
+
+
 
 function createCart(data) {
     for (let cartObject of cartTwo) {
@@ -64,12 +70,16 @@ function createCart(data) {
         clone.querySelector(".rollName").innerText = cartObject + "Cinnamon Roll";
         clone.querySelector(".glazeType").innerText = "Glazing:" + cartObject.glazing;
         clone.querySelector(".packSize").innerText = "Pack Size:" + cartObject.packize;
-        clone.querySelector(".roll-price").innerText = "$" + cartObject.basePrice;
+
+        finalPrice = calculatePrice(cartObject.basePrice, glazingPrice[cartObject.glazing], priceAdaption[cartObject.packSize]); //find value in each dictionary
+
+        clone.querySelector(".roll-price").innerText = "$" + finalPrice.toFixed(2);
+
+
 
         document.querySelector(".whole-cart").appendChild(clone);
+        totalPrice();
     }
-
-    
 
 }
 
@@ -78,35 +88,6 @@ createCart(cartTwo);
 
 
 
-//     const btnExpand = this.element.querySelector('.rollName');
-
-    
-
-
-
-// function calculatePrice(basePrice, glazePrice, packSize) {
-//     return((basePrice + glazePrice) * packSize).toFixed(2);
-// }
-
-
-
-
-
-
-
-
-// // grab glaze
-// let glaze = document.getElementById("glazingOptions");
-
-
-// function glazingChange(element) {
-//     for (let i=0; i < GlazeOptionsArray.length; i++){
-//         if (element.value === GlazeOptionsArray[i].type) {
-//             glazingPrice = GlazeOptionsArray[i].price; 
-//         }        
-// }
-// changePrice();
-// }
 
 
 
