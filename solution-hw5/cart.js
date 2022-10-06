@@ -67,9 +67,10 @@ function createCart(data) {
 
         //populate HTML with text/ images
         clone.querySelector(".smaller-image").src = "assets/products/" + cartObject.type + "-cinnamon-roll.jpg"
+        clone.querySelector(".smaller-image").alt = cartObject.type + "Cinnamon Roll"
         clone.querySelector(".rollName").innerText = cartObject.type + " " + "Cinnamon Roll";
         clone.querySelector(".glazeType").innerText = "Glazing:" + cartObject.glazing;
-        clone.querySelector(".packSize").innerText = "Pack Size:" + cartObject.packize;
+        clone.querySelector(".packSize").innerText = "Pack Size:" + cartObject.packSize;
 
         //calculate final price of each item
         finalPrice = calculatePrice(cartObject.basePrice, glazingPrice[cartObject.glazing], priceAdaption[cartObject.packSize]); //find value in each dictionary
