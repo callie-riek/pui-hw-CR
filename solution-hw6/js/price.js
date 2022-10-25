@@ -66,7 +66,9 @@ changePrice();
 
 
 // START HW 4 //////////////////////////////
-const cart = new Set();
+
+let cart=[];
+
   
 if (localStorage.getItem('storedCart') != null) {
     retrieveFromLocalStorage();
@@ -105,23 +107,12 @@ class Roll {
 }
 
 
-// function saveToLocalStorage() {
-//     const notecardArray = Array.from(notecardSet);
-//     const notecardArrayString = JSON.stringify(notecardArray);
-//     localStorage.setItem('storedNotes', notecardArrayString);
-//   }
-
-
-    
-
-
-
 function addToCart() {
     let newBun = new Roll(rollType, glaze.value, packSizeOptions.value, basePrice);
-    cart.add(newBun);
+    console.log("new bun", newBun)
+    cart.push(newBun);
 
-    const cartArray = Array.from(cart);
-    const cartArrayString = JSON.stringify(cartArray);
+    const cartArrayString = JSON.stringify(cart);
     localStorage.setItem('storedCart', cartArrayString)
 
     console.log("cart", cart);
@@ -130,7 +121,7 @@ function addToCart() {
 
 function retrieveFromLocalStorage() {
     const cartArrayString = localStorage.getItem('storedCart');
-    const cartArray = JSON.parse(cartArrayString);
+    cart = JSON.parse(cartArrayString);
     console.log("running retrieve cart function now")
     console.log("here is the cart", cart)
   }

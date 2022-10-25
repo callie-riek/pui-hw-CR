@@ -1,47 +1,26 @@
-// import { Price } from "price.js";
+let cartArray;
+
+
+if (localStorage.getItem('storedCart') != null) {
+    retrieveFromLocalStorage();
+}
+
 
 function retrieveFromLocalStorage() {
     const cartArrayString = localStorage.getItem('storedCart');
-    const cartArray = JSON.parse(cartArrayString);
-    console.log("running retrieve cart function now")
-    console.log("here is the cart", cart)
+    cartArray = JSON.parse(cartArrayString);
+    // console.log("running retrieve cart function now")
+    console.log("here is the cart", cartArray)
   }
 
 
-
-//create roll class
-class Roll {
-    constructor(rollType, rollGlazing, packSize, rollPrice, calculatedPrice) {
-        this.type = rollType;
-        this.glazing = rollGlazing;
-        this.packSize = packSize;
-        this.basePrice = rollPrice;
-        this.calculatedPrice = calculatedPrice;
-    }
-}
-
-//cartTwo =  cart on cart page
-const cartTwo = new Set();
-
-//create new roll objects
-// let newBun1 = new Roll ("original", "Sugar Milk", 1, 2.49);
-// let newBun2 = new Roll ("walnut", "Vanilla Milk", 12, 3.49);
-// let newBun3 = new Roll ("raisin", "Sugar Milk", 3, 2.99);
-// let newBun4 = new Roll ("apple", "Keep Original", 3, 3.49);
-
-//add roll objects to cart set
-// cartTwo.add(newBun1);
-// cartTwo.add(newBun2);
-// cartTwo.add(newBun3);
-// cartTwo.add(newBun4);
-
 //arrays with values needed in price calculation
-//price adapt
+// price adapt
 let priceAdaption = {
-    1:1,
-    3:3,
-    6:5,
-    12:10
+    "1":1,
+    "3":3,
+    "6":5,
+    "12":10
 };
 
 //glaze
@@ -54,13 +33,15 @@ let glazingPrice = {
 
 //calculate price for individual items
 function calculatePrice(basePrice, glazing, packSize) {
+    console.log("calculating price for individual item")
     return((basePrice + glazing) * packSize);
+    
 }
 
 //calculate cart total
 function totalPrice() {
     let cartTotal = 0;
-    for (let cartObject of cartTwo) {
+    for (let cartObject of cartArray) {
         finalPrice = calculatePrice(cartObject.basePrice, glazingPrice[cartObject.glazing], priceAdaption[cartObject.packSize]);
         cartTotal = finalPrice + cartTotal;
     }
@@ -71,10 +52,12 @@ document.querySelector(".finalCartPrice").innerText = "$" + cartTotal.toFixed(2)
 
 //clone objects into HTML template
 function createCart(data) {
-    for (let cartObject of cartTwo) {
+    console.log("running create cart function")
+    for (let cartObject of cartArray) {
         let cartElement = document.getElementById("ItemOne");
         let docFragment = cartElement.content.cloneNode(true);
         let clone = docFragment.querySelector('.cart-inner-row');
+        // console.log("running create cart function")
 
         //populate HTML with text/ images
         clone.querySelector(".smaller-image").src = "assets/products/" + cartObject.type + "-cinnamon-roll.jpg";
@@ -85,13 +68,25 @@ function createCart(data) {
 
         //calculate final price of each item
         finalPrice = calculatePrice(cartObject.basePrice, glazingPrice[cartObject.glazing], priceAdaption[cartObject.packSize]); //find value in each dictionary
+        console.log("final price", finalPrice)
 
         //add remove button
         clone.querySelector(".roll-price").innerText = "$" + finalPrice.toFixed(2);
         const btnDelete = clone.querySelector('.caption');
         btnDelete.addEventListener("click", () => { //add inline style
             clone.remove(); //remove HTML element
-            cartTwo.delete(cartObject); //remove cart object from cart set
+            console.log("cart object is", cartObject)
+
+        
+            // cartArray.slice(cartObject); //remove cart object from cart array
+            cartArray.splice(i, 1);
+
+
+
+            retrieveFromLocalStorage()
+            console.log("retrieve from local storage")
+            console.log("new cart after removal", cartArray)
+            
             totalPrice(); //call total price function here so it will run each time something is deleted   
         });
 
@@ -100,7 +95,7 @@ function createCart(data) {
     }
 }
 
-createCart(cartTwo); //call create function
+// createCart(cartArray); //call create function
 
 
 
