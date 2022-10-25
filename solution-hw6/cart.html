@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+  <title>Product Detail</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="rollsData.js"></script>
+  <script defer src="cart.js"></script>
+  
+
+  <div class="whole-nav">
+    <a href="index.html">
+      <img src="assets/logo/logo-01.svg" alt="Bun Bun logo" class="logo"/>
+    </a>
+
+    <body onload="retrieveFromLocalStorage()">
+      <div class="nav-menu">
+        <div class="nav">
+
+          <a href="index.html"><h1>PRODUCTS</h1></a>
+            <span class="margin"></span>
+          <a href="cart.html"><h1 class="highlight">CART</h1></a>
+        </div>
+
+        <hr>
+
+        <p class="menu-intro">Shopping cart</p>
+      </div>
+  </div>
+
+  <div class="whole-cart">
+
+    <template id = "ItemOne">
+
+      <div class="cart-inner-row">
+        <div class="cart-image-caption">
+          <img class="smaller-image" src="assets/products/original-cinnamon-roll.jpg" alt="Original cinnamon roll">
+          <p class="caption">Remove</p>
+        </div>
+        <div class="cart-description">
+          <p class = "rollName">Original cinnamon roll</p>
+          <p class = "glazeType">Glazing: Keep original</p>
+          <p class = "packSize">Pack Size: 1</p>
+        </div>
+          <p class="roll-price">$ 2.49</p>
+      </div>
+
+    </template>
+    
+  </div>
+
+        <hr>
+
+      <div class="price">
+          <p>Total </p> <p class="finalCartPrice">$29.94</p>
+      </div>
+      <div id="cart-button">
+        <button>Checkout</button>
+      </div>
+  </div>
+</body>
+</html>
