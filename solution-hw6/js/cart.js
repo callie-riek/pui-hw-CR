@@ -54,7 +54,7 @@ function createCart(data) {
         let clone = docFragment.querySelector('.cart-inner-row');
 
         //populate HTML with text/ images
-        clone.querySelector(".smaller-image").src = "assets/products/" + cartObject.type + "-cinnamon-roll.jpg";
+        clone.querySelector(".smaller-image").src = "./assets/products/" + cartObject.type + "-cinnamon-roll.jpg";
         clone.querySelector(".smaller-image").alt = cartObject.type + " " + "Cinnamon Roll";
         clone.querySelector(".rollName").innerText = cartObject.type + " " + "Cinnamon Roll";
         clone.querySelector(".glazeType").innerText = "Glazing:" + cartObject.glazing;
