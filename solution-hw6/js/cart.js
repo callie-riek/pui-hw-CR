@@ -12,6 +12,8 @@ function retrieveFromLocalStorage() {
     return cartArray;
   }
 
+  console.log("cart array", cartArray);
+
 //arrays with values needed in price calculation
 // price adapt
 let priceAdaption = {
@@ -45,7 +47,7 @@ function totalPrice() {
 document.querySelector(".finalCartPrice").innerText = "$" + cartTotal.toFixed(2);
 }
 
-console.log("cart array" cartArray)
+
 
 
 //clone objects into HTML template
