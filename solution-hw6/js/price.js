@@ -64,16 +64,11 @@ function packChange(element) {
 changePrice();
 }
 
-
-// START HW 4 //////////////////////////////
-
 let cart=[];
-
   
 if (localStorage.getItem('storedCart') != null) {
     retrieveFromLocalStorage();
 }
-
 
 //grab URL parameter and store roll type as a variable
 const queryString = window.location.search;
@@ -95,34 +90,27 @@ document.querySelector(".menu-intro").innerText = rollName; //reassign header in
 document.querySelector("#price").innerText = "$" + rollBasePrice; //update price
 document.querySelector(".product-detail").src = rollImagePath;
 
-
 class Roll {
     constructor(rollType, glaze, packSize, basePrice) {
         this.type = rollType;
         this.glazing = glaze;
         this.packSize = packSize;
         this.basePrice = basePrice;
-
     }
 }
 
-
+//add to cart and save to local storage
 function addToCart() {
     let newBun = new Roll(rollType, glaze.value, packSizeOptions.value, basePrice);
-    console.log("new bun", newBun)
     cart.push(newBun);
 
     const cartArrayString = JSON.stringify(cart);
     localStorage.setItem('storedCart', cartArrayString)
-
-    console.log("cart", cart);
-    console.log("adding to cart")
 }
 
+//retrieve local storage
 function retrieveFromLocalStorage() {
     const cartArrayString = localStorage.getItem('storedCart');
     cart = JSON.parse(cartArrayString);
-    console.log("running retrieve cart function now")
-    console.log("here is the cart", cart)
   }
 

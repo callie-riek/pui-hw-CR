@@ -1,17 +1,16 @@
+//bring cartArray into this JS page
 let cartArray;
 
-
+//if there is anyhting in the cart, retrieve cart from local storage
 if (localStorage.getItem('storedCart') != null) {
     retrieveFromLocalStorage();
 }
-
 
 function retrieveFromLocalStorage() {
     const cartArrayString = localStorage.getItem('storedCart');
     cartArray = JSON.parse(cartArrayString);
     return cartArray;
   }
-
 
 //arrays with values needed in price calculation
 // price adapt
@@ -24,7 +23,7 @@ let priceAdaption = {
 
 //glaze
 let glazingPrice = {
-    "Keep Original":0,
+    "Keep original":0,
     "Sugar Milk":0,
     "Vanilla Milk":0.5,
     "Double Chcolate":1.5
@@ -32,9 +31,7 @@ let glazingPrice = {
 
 //calculate price for individual items
 function calculatePrice(basePrice, glazing, packSize) {
-    console.log("calculating price for individual item")
     return((basePrice + glazing) * packSize);
-    
 }
 
 //calculate cart total
@@ -51,12 +48,10 @@ document.querySelector(".finalCartPrice").innerText = "$" + cartTotal.toFixed(2)
 
 //clone objects into HTML template
 function createCart(data) {
-    console.log("running create cart function")
     for (let cartObject of cartArray) {
         let cartElement = document.getElementById("ItemOne");
         let docFragment = cartElement.content.cloneNode(true);
         let clone = docFragment.querySelector('.cart-inner-row');
-        // console.log("running create cart function")
 
         //populate HTML with text/ images
         clone.querySelector(".smaller-image").src = "assets/products/" + cartObject.type + "-cinnamon-roll.jpg";
@@ -67,12 +62,10 @@ function createCart(data) {
 
         //calculate final price of each item
         finalPrice = calculatePrice(cartObject.basePrice, glazingPrice[cartObject.glazing], priceAdaption[cartObject.packSize]); //find value in each dictionary
-        console.log("final price", finalPrice)
+    
 
         //add remove button
         clone.querySelector(".roll-price").innerText = "$" + finalPrice.toFixed(2);
-
-
         const btnDelete = clone.querySelector('.caption');
         btnDelete.addEventListener("click", () => {
             removeFromCart(clone, cartObject);
@@ -84,37 +77,23 @@ function createCart(data) {
 }
 
 
-
+//remove from cart when event is triggered
 function removeFromCart(clone, cartObject) {
-    clone.remove(); //remove HTML element
-    console.log("cart object is", cartObject)
-
-        
-    // cartArray.slice(cartObject); //remove cart object from cart array
-            
-    // cartArray.splice(-----);
-
-
-
     let updatedCart = retrieveFromLocalStorage();
 
+    //loop through the new cart, if the clone matches anything in the cart, remove it from the array
     for (let i=0; i < updatedCart.length; i++){
         if (JSON.stringify(cartObject) === JSON.stringify(updatedCart[i])) {
             updatedCart.splice(i,1);
-
     }
-}
-console.log("out of the for loop now", updatedCart)
+    let updatedCartJson = JSON.stringify(updatedCart)
+    localStorage.setItem('storedCart', updatedCartJson)
 
-//    loop through updated cart
-//    find where in updated cart is equal to cart Object
-//    when it is equal to object in updated cart, update local storage
-            
+    clone.remove(); //remove HTML element
+}            
     totalPrice(); //call total price function here so it will run each time something is deleted   
 }
 
-
-// createCart(cartArray); //call create function
 
 
 
