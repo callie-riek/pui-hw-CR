@@ -45,6 +45,8 @@ function totalPrice() {
 document.querySelector(".finalCartPrice").innerText = "$" + cartTotal.toFixed(2);
 }
 
+console.log("cart array" cartArray)
+
 
 //clone objects into HTML template
 function createCart(data) {
