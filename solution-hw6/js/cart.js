@@ -9,8 +9,7 @@ if (localStorage.getItem('storedCart') != null) {
 function retrieveFromLocalStorage() {
     const cartArrayString = localStorage.getItem('storedCart');
     cartArray = JSON.parse(cartArrayString);
-    // console.log("running retrieve cart function now")
-    console.log("here is the cart", cartArray)
+    return cartArray;
   }
 
 
@@ -72,28 +71,48 @@ function createCart(data) {
 
         //add remove button
         clone.querySelector(".roll-price").innerText = "$" + finalPrice.toFixed(2);
+
+
         const btnDelete = clone.querySelector('.caption');
-        btnDelete.addEventListener("click", () => { //add inline style
-            clone.remove(); //remove HTML element
-            console.log("cart object is", cartObject)
-
-        
-            // cartArray.slice(cartObject); //remove cart object from cart array
-            cartArray.splice(i, 1);
-
-
-
-            retrieveFromLocalStorage()
-            console.log("retrieve from local storage")
-            console.log("new cart after removal", cartArray)
-            
-            totalPrice(); //call total price function here so it will run each time something is deleted   
-        });
+        btnDelete.addEventListener("click", () => {
+            removeFromCart(clone, cartObject);
+        })
 
         totalPrice(); //call total price for each object
         document.querySelector(".whole-cart").appendChild(clone); //append everything to whole cart  
     }
 }
+
+
+
+function removeFromCart(clone, cartObject) {
+    clone.remove(); //remove HTML element
+    console.log("cart object is", cartObject)
+
+        
+    // cartArray.slice(cartObject); //remove cart object from cart array
+            
+    // cartArray.splice(-----);
+
+
+
+    let updatedCart = retrieveFromLocalStorage();
+
+    for (let i=0; i < updatedCart.length; i++){
+        if (JSON.stringify(cartObject) === JSON.stringify(updatedCart[i])) {
+            updatedCart.splice(i,1);
+
+    }
+}
+console.log("out of the for loop now", updatedCart)
+
+//    loop through updated cart
+//    find where in updated cart is equal to cart Object
+//    when it is equal to object in updated cart, update local storage
+            
+    totalPrice(); //call total price function here so it will run each time something is deleted   
+}
+
 
 // createCart(cartArray); //call create function
 
