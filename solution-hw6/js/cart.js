@@ -12,8 +12,6 @@ function retrieveFromLocalStorage() {
     return cartArray;
   }
 
-  console.log("cart array", cartArray);
-
 //arrays with values needed in price calculation
 // price adapt
 let priceAdaption = {
@@ -77,6 +75,7 @@ function createCart(data) {
 
         totalPrice(); //call total price for each object
         document.querySelector(".whole-cart").appendChild(clone); //append everything to whole cart  
+        console.log("cart", cartArray);
     }
 }
 
@@ -96,6 +95,7 @@ function removeFromCart(clone, cartObject) {
     clone.remove(); //remove HTML element
 }            
     totalPrice(); //call total price function here so it will run each time something is deleted   
+    console.log("cart", updatedCart);
 }
 
 
