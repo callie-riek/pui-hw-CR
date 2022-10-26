@@ -90,8 +90,8 @@ function removeFromCart(clone, cartObject) {
         if (JSON.stringify(cartObject) === JSON.stringify(updatedCart[i])) {
             updatedCart.splice(i,1);
     }
-    let updatedCartJson = JSON.stringify(updatedCart)
-    localStorage.setItem('storedCart', updatedCartJson)
+    let updatedCartJson = JSON.stringify(updatedCart);
+    localStorage.setItem('storedCart', updatedCartJson);
 
     clone.remove(); //remove HTML element
 }            
