@@ -101,9 +101,7 @@ function removeFromCart(clone, cartObject) {
 
 
 
-
-//comment
-
+console.log('is this thing on');
 
 
 
