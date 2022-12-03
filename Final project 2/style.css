@@ -1,0 +1,51 @@
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 5px;
+    background-color: #A3CCDF;
+    color: #FFF4E1;
+    
+    
+}
+
+.header{
+    font-family:'Lato', sans-serif;
+    font-size: 30px;;
+    font-weight: 600;
+    color: #9DE3DB;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+
+}
+
+.header_2{
+    font-family:'Lato', sans-serif;
+    font-size: 30px;;
+    font-weight: 600;
+    color: #D3D64D;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+
+}
+
+.image {
+    width:500px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.aus_icon_dark{
+    width:35%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: 20%;
+}
+
+
