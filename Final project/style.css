@@ -1,12 +1,23 @@
 body {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 17px;
     letter-spacing: 0.5px;
-    line-height: 1.5;
+    line-height: 1.7;
     padding: 5px;
     background-color: #01253F;
     color: #FFF4E1;    
+}
+
+.header-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    margin-bottom: 8%;
+
+
+
 }
 
 .icon {
@@ -45,12 +56,12 @@ body {
 .section_row{
     display:flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end;
     flex-wrap: wrap;
 
     /* margin-top: 25%; */
     margin-bottom: 25%;
-    margin-left: 10%;
+    margin-left: 15%;
     margin-right: 5%;
 
     padding-top: 18.5%;
@@ -64,7 +75,7 @@ body {
 
 .section_image {
     width: 50%;
-    margin-right: 2%;
+    
 
     display: flex;
     flex-direction:column; 
@@ -97,10 +108,10 @@ body {
 
 .header_2{
     font-family:'Lato', sans-serif;
-    font-size: 35px;;
+    font-size: 45px;;
     font-weight: 600;
     color: #D3D64D;
-    letter-spacing: 7px;
+    letter-spacing: 12px;
     text-transform: uppercase;
 
     text-align: center;
@@ -126,15 +137,21 @@ body {
 
 .copy {
     text-align: left;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
+    width: 40%;
     max-width: 700px;
+
+    margin-left: 5%;
+
+    display: flex;
+    flex-direction:column; 
+    justify-content: center;
+
+    
+
 }
+
 .image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
 
 }
 
