@@ -35,7 +35,7 @@ body {
 
 .icon:hover {
     display: inline-block;
-    animation: pulse;
+    animation: tada;
     animation-duration: 0.75s;
 }
 
