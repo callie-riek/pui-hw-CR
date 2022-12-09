@@ -58,6 +58,15 @@ var sceneSix = new ScrollMagic.Scene({
 .setClassToggle('#loch', 'fade-in') //add CSS class
 .addTo(controller);
 
+//tips controller
+var sceneSix = new ScrollMagic.Scene({
+    triggerElement: '#tips',
+    duration: '100%',
+    triggerHook: 0.90, 
+})
+.setClassToggle('#tips', 'fade-in') //add CSS class
+.addTo(controller);
+
 
 
 
