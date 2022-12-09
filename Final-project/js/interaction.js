@@ -61,30 +61,4 @@ var sceneSix = new ScrollMagic.Scene({
 
 
 
-///////////////////////
-
-// document.getElementById('items').style.display = "none";
-
-const toggleButton = document.getElementById('toggle-button');
-
-toggleButton.addEventListener("click", toggle);
-
-function toggle() {
-    // document.getElementById('items').style.display = "flex";
-
-    
-    var toggle = document.getElementById('items');
-
-    if (toggle.style.display == "none") {
-        toggle.style.display = "flex";
-    }
-
-    else {
-
-    } toggle.style.display = "none";
-
-}
-//     
-// })
-
   
