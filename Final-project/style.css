@@ -15,9 +15,6 @@ body {
     justify-content: center;
 
     margin-bottom: 8%;
-
-
-
 }
 
 .icon {
@@ -32,9 +29,6 @@ body {
     display: inline-block;
     animation: pulse;
     animation-duration: 0.75s;
-    
-
-
 }
 
 .navbar {
@@ -112,13 +106,11 @@ body {
     color: #9DE3DB;
     letter-spacing: 6px;
     text-transform: uppercase;
-
-
 }
 
 .header_2{
     font-family:'Lato', sans-serif;
-    font-size: 45px;;
+    font-size: 45px;
     font-weight: 600;
     color: #D3D64D;
     letter-spacing: 12px;
@@ -169,8 +161,25 @@ body {
 } */
 
 @media only screen and (max-width: 600px) {
-    body {
+    /* body {
         background-color: green;
+    } */
+
+    .header_2 {
+        font-size: 35px;
+        margin-top: 5%;
+        width: 95%;
+
+    }
+
+    .header-flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 95%;
+
+        margin-bottom: 8%;
+
     }
 
     .button_row {
@@ -180,6 +189,10 @@ body {
         width: 95%;
 
         margin-top: 3%;
+    }
+
+    .copy {
+        width: 95%
     }
 
     .section_row {
