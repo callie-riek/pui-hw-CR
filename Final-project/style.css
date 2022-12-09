@@ -71,8 +71,8 @@ body {
 
     /* margin-top: 25%; */
     margin-bottom: 25%;
-    margin-left: 15%;
-    margin-right: 5%;
+    /* margin-left: 15%;
+    margin-right: 5%; */
 
     padding-top: 18.5%;
 
@@ -132,10 +132,7 @@ body {
     max-width: 500px;
 }
 
-/* .section_image:hover {
-    animation-name: bounce;
-   
-} */
+
 
 
 
@@ -188,12 +185,35 @@ body {
     .section_row {
         display: flex;
         flex-direction: column;
-        -ms-flex-align: center;
+        justify-content: center;
+
+        display: inline-block;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
     .section_image {
-        width: 100%;
+        display: flex;
+        justify-content: center;
 
+        width: 90%;
+        max-width: 300px;
+        /* display: inline-block;
+        margin-left: auto;
+        margin-right: auto; */
+
+
+    }
+
+    .section_text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        width:90%;
+        /* display: inline-block;
+        margin-left: 5%;
+        margin-right: auto; */
     }
 }
 
