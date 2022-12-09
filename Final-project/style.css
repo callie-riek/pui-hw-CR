@@ -178,6 +178,18 @@ body {
 
     }
 
+    .header{
+        font-family:'Lato', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: left;
+    
+    
+        color: #9DE3DB;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+    }
+
     .header-flex {
         display: flex;
         flex-direction: column;
@@ -233,7 +245,7 @@ body {
         flex-direction: column;
         justify-content: center;
 
-        display: inline-block;
+   
         margin-left: 5%;
         margin-right: 5%;
         top: 300px;
@@ -267,11 +279,10 @@ body {
             position:sticky;
             top:0;
         
-            background-color: #01253F;
+            background-color: #01253F; 
 
             z-index: 999;
         }
-ow to 
 
 
 }
