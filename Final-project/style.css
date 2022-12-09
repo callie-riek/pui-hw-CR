@@ -163,6 +163,8 @@ body {
 
 
 
+/* MOBILE */
+
 
 @media only screen and (max-width: 600px) {
     /* body {
@@ -197,6 +199,8 @@ body {
         width: 95%;
 
         margin-bottom: 8%;
+
+       
     
 
     }
@@ -218,23 +222,8 @@ body {
     }
     
  
-    #items{
 
-        display: flex;
 
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
-        margin-top: 3%;
-        background-color: #00496D;
-
-        padding: 5px;
-        border-radius: 15px;
-    }
-
-    .button_row {
-        width: 95%;
-    }
 
     .copy {
         width: 95%
@@ -268,16 +257,18 @@ body {
 
         width:90%;}
 
-        .button_row {
+    .button_row {
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
+            justify-content: center
             padding-left: 3%;
             padding-right: 3%;
             padding-top: 5%;
             padding-bottom: 5%;
             position:sticky;
             top:0;
+
+            width: 100%;
         
             background-color: #01253F; 
 
